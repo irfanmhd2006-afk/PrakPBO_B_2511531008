@@ -20,7 +20,7 @@ public class Order {
     }
     public List<Line> getLines() { return Collections.unmodifiableList(lines); }
     
-    // TODO getItemsTotal(), createReceipt(), class Line, class Receipt
+    
     public long getItemsTotal() {
         long total = 0;
         for (Line line : lines) {
@@ -28,6 +28,7 @@ public class Order {
         }
         return total;
     }
+    
     public static class Line{
         private final Product product;
         private final int quantity;
@@ -59,6 +60,9 @@ public class Order {
             return sb.toString();
         }
        
+    }
+    public Receipt createReceipt(){
+        return new Receipt();
     }
     
 }

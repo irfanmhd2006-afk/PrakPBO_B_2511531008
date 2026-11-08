@@ -36,6 +36,10 @@ public class CheckoutService {
     public boolean refund(RefundablePayment payment, long amount) {
         return payment.refund(amount);
     }
- // TODO total(List<Product> items, ShippingService shipping)
- // TODO checkout(List<Product> items, ShippingService shipping, PaymentMethod payment)
+
+    public long grandTotal(List<Product> items, ShippingService shipping, PaymentMethod payment) {
+        long total = total(items, shipping);
+        return total + payment.adminFee(total);
+    }
+
 }

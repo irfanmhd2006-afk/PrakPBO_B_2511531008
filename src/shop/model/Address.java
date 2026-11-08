@@ -1,5 +1,5 @@
 package shop.model;
-public class Address {
+public final class Address {
     private final String street; 
     private final String city;
     private final String postalCode;

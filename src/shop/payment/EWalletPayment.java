@@ -32,6 +32,8 @@ public class EWalletPayment implements RefundablePayment {
         balance -= amount; // Kurangi saldo jika berhasil
         return true;
     }
+
+    @Override
     public boolean refund(long amount) {
         if (amount <= 0) {
             return false; // Gagal jika amount tidak valid

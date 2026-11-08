@@ -17,6 +17,8 @@ import shop.shipping.ShippingService;
 
 public class ShopApp {
     public static void main(String[] args) {
+
+        
         Product coffee = new PhysicalProduct("KOPI-001", "Kopi Arabika Gayo 250g", 85_000, 300);
         Product rendang = new PhysicalProduct("RDG-002", "Rendang Kemasan 250g", 120_000, 400);
         Product ebook = new DigitalProduct("EBK-003", "E-book Resep Kue Nusantara", 50_000L, "https://toko-umkm.example/unduh/ebk-003");
@@ -31,6 +33,8 @@ public class ShopApp {
         CheckoutService checkout = new CheckoutService();
         ShippingService regular = new RegularShipping();
         ShippingService express = new ExpressShipping();
+
+        // checkout.refund(new BankTransferPayment("Bank Nagari"), 1_000);
 
         System.out.println("\n== Ringkasan ==");
         System.out.println("Subtotal        : Rp" + checkout.subtotal(cart));
